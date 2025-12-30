@@ -4,7 +4,7 @@
 	home.username = "gchalakov";
 	home.homeDirectory = "/home/gchalakov";
 	programs.git.enable = true;
-	home.stateVersion = "25.05";
+	home.stateVersion = "25.11";
 	programs.bash = {
 		enable = true;
 		shellAliases = {
