@@ -17,9 +17,12 @@
 		nvtopPackages.nvidia
 	];
 
+	## DOCKER ##
 	virtualisation.docker.enable = true;
 	users.extraGroups.docker.members = [ "gchalakov" ];
+	hardware.nvidia-container-toolkit.enable = true; # use --device=nvidia.com/gpu=all instead of gpu=all
 
+	## SSH ##
 	programs.ssh = {
 		startAgent = true;
 		extraConfig = ''
@@ -59,5 +62,11 @@
 		powerManagement.finegrained = false;
 		open = true;
 		package = config.boot.kernelPackages.nvidiaPackages.stable;
+	};
+
+	## OLLAMA ##
+	services.ollama = {
+		enable = true;
+		acceleration = "cuda";
 	};
 }
