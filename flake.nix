@@ -18,7 +18,8 @@
 					home-manager = {
 						useGlobalPkgs = true;
 						useUserPackages = true;
-						users.gchalakov = import ./home.nix;
+						users.root= import ./home-root.nix;
+						users.gchalakov = import ./home-gchalakov.nix;
 						backupFileExtension = "backup";
 					};
 				}
