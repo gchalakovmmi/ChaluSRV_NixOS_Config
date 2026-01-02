@@ -26,6 +26,17 @@
 		];
 	};
 
+	## MOUNT BKP HDD ##
+	fileSystems."/home/gchalakov/backup" = {
+		device = "/dev/disk/by-uuid/82c59328-6016-44ac-a6ab-291f7fe9ea9f";
+		fsType = "ext4";
+		options = [ # If you don't have this options attribute, it'll default to "defaults"
+		# boot options for fstab. Search up fstab mount options you can use
+			# "users" # Allows any user to mount and unmount
+			"nofail" # Prevent system from failing if this drive doesn't mount
+		];
+	};
+
 	# Open ports in the firewall.
 	networking.firewall.allowedTCPPorts = [ 22 443 80 3478 8081 ];
 	networking.firewall.allowedUDPPorts = [ 3478 ];
