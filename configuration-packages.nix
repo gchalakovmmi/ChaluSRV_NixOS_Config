@@ -22,15 +22,6 @@
 	users.extraGroups.docker.members = [ "gchalakov" ];
 	hardware.nvidia-container-toolkit.enable = true; # use --device=nvidia.com/gpu=all instead of gpu=all
 
-	## SSH ##
-	programs.ssh = {
-		startAgent = true;
-		extraConfig = ''
-			AddKeysToAgent yes
-			IdentityFile ~/.ssh/github_gc_rsa
-		'';
-	};
-
 	services.openssh = {
 		enable = true;
 		settings = {
